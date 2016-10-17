@@ -45,7 +45,7 @@ def make_bootstraps(counts, nperm, perm_template, outpath='./', iprint=0):
     for i in xrange(nperm):
         if iprint>0:
             if not i%iprint: print i
-        counts_perm = permute_w_replacement(counts) 
+        counts_perm = permute_w_replacement(counts, axis=1) 
         ## write out cors
         outfile = outpath + perm_template.replace('#', '%d'%i)
         write_txt(counts_perm, outfile)
